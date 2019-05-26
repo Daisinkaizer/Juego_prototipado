@@ -8,3 +8,4 @@ export_presets.cfg
 .mono/
 project.godot
 project.godot
+escenas/mundo.tscn
