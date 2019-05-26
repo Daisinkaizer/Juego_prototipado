@@ -17,7 +17,11 @@ animations = [ {
 extents = Vector2( 350.396, 96.0533 )
 
 [node name="tiburoncin" type="AnimatedSprite"]
+<<<<<<< HEAD
 scale = Vector2( 0.300464, 0.300464 )
+=======
+scale = Vector2( 0.4676, 0.4676 )
+>>>>>>> tiburon
 frames = SubResource( 1 )
 animation = "tiburoncin"
 script = ExtResource( 4 )
