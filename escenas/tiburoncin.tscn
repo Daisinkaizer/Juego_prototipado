@@ -17,6 +17,7 @@ animations = [ {
 extents = Vector2( 350.396, 96.0533 )
 
 [node name="tiburoncin" type="AnimatedSprite"]
+scale = Vector2( 0.4676, 0.4676 )
 frames = SubResource( 1 )
 animation = "tiburoncin"
 script = ExtResource( 4 )
