@@ -3,7 +3,7 @@ extends Node2D
 var Objetivo = preload("res://escenas/tiburoncin.tscn")
 
 func _ready():
-	$Timer.start(5)
+	$Timer.start(3)
 	var objetivoInstancia = Objetivo.instance()
 	add_child(objetivoInstancia)
 	pass

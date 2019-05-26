@@ -17,9 +17,13 @@ animations = [ {
 extents = Vector2( 350.396, 96.0533 )
 
 [node name="tiburoncin" type="AnimatedSprite"]
+scale = Vector2( 0.300464, 0.300464 )
 frames = SubResource( 1 )
 animation = "tiburoncin"
 script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Area2D" type="Area2D" parent="."]
 
