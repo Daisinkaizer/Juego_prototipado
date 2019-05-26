@@ -1,8 +1,5 @@
 extends AnimatedSprite
 
-func _ready():
-	$Area2D/CollisionShape2D.disabled = true
-
 func _process(delta):
 	position.x -= 5
 	pass
