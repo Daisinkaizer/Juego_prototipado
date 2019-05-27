@@ -1,13 +1,12 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://escenas/Parallax_layer.gd" type="Script" id=1]
 [ext_resource path="res://assets/fondo.png" type="Texture" id=2]
 [ext_resource path="res://escenas/jugador.tscn" type="PackedScene" id=3]
 [ext_resource path="res://escenas/generador_T.tscn" type="PackedScene" id=4]
-[ext_resource path="res://escenas/generador_T2.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Animation" id=1]
-resource_name = "spawn_T"
+resource_name = "Spawn_T"
 length = 10.0
 loop = true
 tracks/0/type = "value"
@@ -20,24 +19,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1350, 720 ), Vector2( 1350, 648 ), Vector2( 1350, 576 ), Vector2( 1350, 504 ), Vector2( 1350, 432 ), Vector2( 1350, 360 ), Vector2( 1350, 288 ), Vector2( 1350, 216 ), Vector2( 1350, 144 ), Vector2( 1350, 72 ), Vector2( 1350, 0 ), Vector2( 1350, 72 ), Vector2( 1350, 144 ), Vector2( 1350, 216 ), Vector2( 1350, 288 ), Vector2( 1350, 360 ), Vector2( 1350, 432 ), Vector2( 1350, 504 ), Vector2( 1350, 576 ), Vector2( 1350, 648 ), Vector2( 1350, 720 ) ]
-}
-
-[sub_resource type="Animation" id=2]
-resource_name = "spawn_T2"
-length = 10.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1500, 0 ), Vector2( 1500, 72 ), Vector2( 1500, 144 ), Vector2( 1500, 216 ), Vector2( 1500, 288 ), Vector2( 1500, 360 ), Vector2( 1500, 432 ), Vector2( 1500, 504 ), Vector2( 1500, 576 ), Vector2( 1500, 648 ), Vector2( 1500, 720 ), Vector2( 1500, 648 ), Vector2( 1500, 576 ), Vector2( 1500, 504 ), Vector2( 1500, 432 ), Vector2( 1500, 360 ), Vector2( 1500, 288 ), Vector2( 1500, 216 ), Vector2( 1500, 144 ), Vector2( 1500, 72 ), Vector2( 1500, 0 ) ]
+"values": [ Vector2( 1302.81, 0 ), Vector2( 1302.81, 72 ), Vector2( 1302.81, 144 ), Vector2( 1302.81, 216 ), Vector2( 1302.81, 288 ), Vector2( 1302.81, 360 ), Vector2( 1302.81, 432 ), Vector2( 1302.81, 504 ), Vector2( 1302.81, 576 ), Vector2( 1302.81, 648 ), Vector2( 1302.81, 720 ), Vector2( 1302.81, 648 ), Vector2( 1302.81, 576 ), Vector2( 1302.81, 504 ), Vector2( 1302.81, 432 ), Vector2( 1302.81, 360 ), Vector2( 1302.81, 288 ), Vector2( 1302.81, 216 ), Vector2( 1302.81, 144 ), Vector2( 1302.81, 72 ), Vector2( 1302.81, 0 ) ]
 }
 
 [node name="mundo" type="Node"]
@@ -57,16 +39,11 @@ texture = ExtResource( 2 )
 [node name="jugador" parent="." instance=ExtResource( 3 )]
 
 [node name="generador_T" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1350, 720 )
+position = Vector2( 1302.81, 0 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="generador_T"]
-autoplay = "spawn_T"
-anims/spawn_T = SubResource( 1 )
+autoplay = "Spawn_T"
+anims/Spawn_T = SubResource( 1 )
 
-[node name="generador_T2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1500, 0 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="generador_T2"]
-autoplay = "spawn_T2"
-anims/spawn_T2 = SubResource( 2 )
-
+[editable path="generador_T"]
