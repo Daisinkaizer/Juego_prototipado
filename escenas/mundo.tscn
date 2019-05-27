@@ -6,7 +6,7 @@
 [ext_resource path="res://escenas/generador_T.tscn" type="PackedScene" id=4]
 [ext_resource path="res://escenas/generador_T2.tscn" type="PackedScene" id=5]
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=1]
 resource_name = "spawn_T"
 length = 10.0
 loop = true
@@ -61,7 +61,7 @@ position = Vector2( 1350, 720 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="generador_T"]
 autoplay = "spawn_T"
-anims/spawn_T = SubResource( 3 )
+anims/spawn_T = SubResource( 1 )
 
 [node name="generador_T2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1500, 0 )
