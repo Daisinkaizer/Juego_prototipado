@@ -17,7 +17,7 @@ animations = [ {
 extents = Vector2( 88.3977, 52.4854 )
 
 [node name="piraña" type="KinematicBody2D"]
-scale = Vector2( 0.201626, 0.201626 )
+scale = Vector2( 0.102043, 0.102043 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -26,7 +26,6 @@ __meta__ = {
 [node name="Sprite_piraña" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "piraña"
-frame = 1
 playing = true
 
 [node name="Collision_piraña" type="CollisionShape2D" parent="."]
