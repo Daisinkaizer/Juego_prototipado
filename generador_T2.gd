@@ -1,4 +1,5 @@
 extends Node2D
+
 var Objetivo = preload("res://escenas/tiburoncin.tscn")
 
 func _ready():
