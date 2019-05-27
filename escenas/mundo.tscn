@@ -44,7 +44,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=3]
 resource_name = "spawn_P"
-length = 14.0
+length = 7.0
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -53,15 +53,15 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 1, 2, 3, 4, 5, 6, 7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 800 ), Vector2( 182.286, 800 ), Vector2( 364.571, 800 ), Vector2( 546.857, 800 ), Vector2( 729.143, 800 ), Vector2( 911.429, 800 ), Vector2( 1093.71, 800 ), Vector2( 1276, 800 ), Vector2( 1093.71, 800 ), Vector2( 911.429, 800 ), Vector2( 729.143, 800 ), Vector2( 546.857, 800 ), Vector2( 364.571, 800 ), Vector2( 182.286, 800 ), Vector2( 0, 800 ) ]
+"values": [ Vector2( 0, 800 ), Vector2( 182.286, 800 ), Vector2( 364.571, 800 ), Vector2( 546.857, 800 ), Vector2( 729.143, 800 ), Vector2( 911.429, 800 ), Vector2( 1093.71, 800 ), Vector2( 1276, 800 ) ]
 }
 
 [sub_resource type="Animation" id=4]
 resource_name = "spawn_P2"
-length = 14.0
+length = 7.0
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -70,10 +70,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 1, 2, 3, 4, 5, 6, 7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1276, 850 ), Vector2( 1093.71, 850 ), Vector2( 911.429, 850 ), Vector2( 729.143, 850 ), Vector2( 546.857, 850 ), Vector2( 364.571, 850 ), Vector2( 182.286, 850 ), Vector2( 0, 850 ), Vector2( 182.286, 850 ), Vector2( 364.571, 850 ), Vector2( 546.857, 850 ), Vector2( 729.143, 850 ), Vector2( 911.429, 850 ), Vector2( 1093.71, 850 ), Vector2( 1276, 850 ) ]
+"values": [ Vector2( 1276, 850 ), Vector2( 1093.71, 850 ), Vector2( 911.429, 850 ), Vector2( 729.143, 850 ), Vector2( 546.857, 850 ), Vector2( 364.571, 850 ), Vector2( 182.286, 850 ), Vector2( 0, 850 ) ]
 }
 
 [node name="mundo" type="Node"]
@@ -107,14 +107,14 @@ autoplay = "spawn_T2"
 anims/spawn_T2 = SubResource( 2 )
 
 [node name="generador_P" parent="." instance=ExtResource( 6 )]
-position = Vector2( 182.286, 800 )
+position = Vector2( 0, 800 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="generador_P"]
 autoplay = "spawn_P"
 anims/spawn_P = SubResource( 3 )
 
 [node name="generador_P2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1093.71, 850 )
+position = Vector2( 1276, 850 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="generador_P2"]
 autoplay = "spawn_P2"
