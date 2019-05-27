@@ -44,7 +44,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=3]
 resource_name = "spawn_P"
-length = 7.0
+length = 8.0
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -53,10 +53,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1, 2, 3, 4, 5, 6, 7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 1, 2, 3, 4, 5, 6, 7, 8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 800 ), Vector2( 182.286, 800 ), Vector2( 364.571, 800 ), Vector2( 546.857, 800 ), Vector2( 729.143, 800 ), Vector2( 911.429, 800 ), Vector2( 1093.71, 800 ), Vector2( 1276, 800 ) ]
+"values": [ Vector2( 0, 800 ), Vector2( 159.5, 800 ), Vector2( 319, 800 ), Vector2( 478.5, 800 ), Vector2( 638, 800 ), Vector2( 797.5, 800 ), Vector2( 957, 800 ), Vector2( 1116.5, 800 ), Vector2( 1276, 800 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -100,7 +100,7 @@ autoplay = "spawn_T"
 anims/spawn_T = SubResource( 1 )
 
 [node name="generador_T2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1500, 0 )
+position = Vector2( 1500, 288 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="generador_T2"]
 autoplay = "spawn_T2"
