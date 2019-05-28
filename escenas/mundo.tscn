@@ -119,4 +119,3 @@ position = Vector2( 1276, 850 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="generador_P2"]
 autoplay = "spawn_P2"
 anims/spawn_P2 = SubResource( 4 )
-
