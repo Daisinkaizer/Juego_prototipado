@@ -2,7 +2,7 @@ extends Node2D
 var objetivo = preload("res://escenas/piraña.tscn")
 
 func _ready():
-	$Timer.start(rand_range(1,8))
+	$Timer.start(rand_range(2,4))
 	var objetivoinstancia = objetivo.instance()
 	add_child(objetivoinstancia)
 	pass
