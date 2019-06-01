@@ -3,7 +3,6 @@ var velocidad = Vector2(0,0)
 var screen_size;
 var gravedad = 15;
 var is_dead = false
-
 func _ready():
 	#hide()
 	screen_size = get_viewport_rect().size
@@ -32,10 +31,13 @@ func _physics_process(delta):
 			for i in range(get_slide_count()):
 				if "tiburoncin" in get_slide_collision(i).collider.name:
 					dead()
+				if "piraña" in get_slide_collision(i).collider.name:
+					dead()
+
 func dead():
 	is_dead = true
+	$jugador_sprite.play("muerte")
 	velocidad = Vector2(0, 0)
-	$AnimatedSprite.play("dead")
 	$Timer.start()
 	
 	
