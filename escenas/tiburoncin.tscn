@@ -24,7 +24,7 @@ script = ExtResource( 1 )
 scale = Vector2( 0.34122, 0.34122 )
 frames = SubResource( 1 )
 animation = "tiburoncin"
-frame = 2
+frame = 1
 playing = true
 
 [node name="Collision_tiburoncin" type="CollisionShape2D" parent="."]
@@ -35,5 +35,4 @@ shape = SubResource( 2 )
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 position = Vector2( 2.09503, 3.84086 )
 scale = Vector2( 16.1539, 7.04062 )
-
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
