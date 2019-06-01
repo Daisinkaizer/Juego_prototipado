@@ -13,7 +13,7 @@ func _physics_process(delta):
 		$MarginContainer/VBoxContainer/VBoxContainer/TextureButton2.grab_focus()
 
 func _on_TextureButton_pressed():
-	get_tree().change_scene("mundo.tscn")
+	get_tree().change_scene("res://escenas/mundo.tscn")
 
 
 func _on_TextureButton2_pressed():
