@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Prototipado Digital"
-run/main_scene="res://escenas/mundo.tscn"
+run/main_scene="res://escenas/Titlescreen.tscn"
 config/icon="res://icon.png"
 
 [display]
