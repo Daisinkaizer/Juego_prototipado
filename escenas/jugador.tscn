@@ -34,7 +34,7 @@ __meta__ = {
 scale = Vector2( 0.364023, 0.364023 )
 frames = SubResource( 1 )
 animation = "buzo"
-frame = 5
+frame = 2
 playing = true
 
 [node name="jugador_colision" type="CollisionShape2D" parent="."]

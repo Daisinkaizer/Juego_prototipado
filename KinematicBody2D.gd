@@ -35,7 +35,7 @@ func _physics_process(delta):
 func dead():
 	is_dead = true
 	velocidad = Vector2(0, 0)
-	$AnimatedSprite.play("dead")
+	$jugador_sprite.play("dead")
 	$Timer.start()
 	
 	
