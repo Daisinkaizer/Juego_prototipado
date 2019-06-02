@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://escenas/Parallax_layer.gd" type="Script" id=1]
 [ext_resource path="res://assets/fondo.png" type="Texture" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://escenas/generador_T2.tscn" type="PackedScene" id=5]
 [ext_resource path="res://escenas/generador_P.tscn" type="PackedScene" id=6]
 [ext_resource path="res://escenas/generador_P2.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/boton-izq.png" type="Texture" id=8]
+[ext_resource path="res://assets/boton-der.png" type="Texture" id=9]
+[ext_resource path="res://assets/boton-arr.png" type="Texture" id=10]
 
 [sub_resource type="Animation" id=1]
 resource_name = "spawn_T"
@@ -119,3 +122,43 @@ position = Vector2( 1276, 850 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="generador_P2"]
 autoplay = "spawn_P2"
 anims/spawn_P2 = SubResource( 4 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 35.0
+margin_top = -141.0
+margin_bottom = -21.0
+
+[node name="izquierda" type="TextureButton" parent="MarginContainer"]
+margin_right = 1245.0
+margin_bottom = 120.0
+texture_normal = ExtResource( 8 )
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 179.0
+margin_top = -141.0
+margin_bottom = -21.0
+
+[node name="derecha" type="TextureButton" parent="MarginContainer2"]
+margin_right = 1101.0
+margin_bottom = 120.0
+texture_normal = ExtResource( 9 )
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1126.0
+margin_top = -141.0
+margin_right = -29.0
+margin_bottom = -21.0
+
+[node name="arriba" type="TextureButton" parent="MarginContainer3"]
+margin_right = 125.0
+margin_bottom = 120.0
+texture_normal = ExtResource( 10 )
