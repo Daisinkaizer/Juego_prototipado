@@ -26,6 +26,7 @@ __meta__ = {
 [node name="Sprite_piraña" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "piraña"
+frame = 2
 playing = true
 
 [node name="Collision_piraña" type="CollisionShape2D" parent="."]

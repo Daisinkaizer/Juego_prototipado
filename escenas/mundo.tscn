@@ -96,6 +96,7 @@ scale = Vector2( 1.20882, 1.28452 )
 texture = ExtResource( 3 )
 
 [node name="jugador" parent="." instance=ExtResource( 4 )]
+position = Vector2( 96.8983, 64.5989 )
 
 [node name="generador_T" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1350, 720 )
@@ -171,3 +172,4 @@ texture_normal = ExtResource( 11 )
 autostart = true
 
 [connection signal="iniciojuego" from="." to="." method="juego_nuevo"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
