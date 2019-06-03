@@ -1,15 +1,16 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://escenas/Parallax_layer.gd" type="Script" id=1]
-[ext_resource path="res://assets/fondo.png" type="Texture" id=2]
-[ext_resource path="res://escenas/jugador.tscn" type="PackedScene" id=3]
-[ext_resource path="res://escenas/generador_T.tscn" type="PackedScene" id=4]
-[ext_resource path="res://escenas/generador_T2.tscn" type="PackedScene" id=5]
-[ext_resource path="res://escenas/generador_P.tscn" type="PackedScene" id=6]
-[ext_resource path="res://escenas/generador_P2.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/boton-izq.png" type="Texture" id=8]
-[ext_resource path="res://assets/boton-der.png" type="Texture" id=9]
-[ext_resource path="res://assets/boton-arr.png" type="Texture" id=10]
+[ext_resource path="res://escenas/mundo.gd" type="Script" id=1]
+[ext_resource path="res://escenas/Parallax_layer.gd" type="Script" id=2]
+[ext_resource path="res://assets/fondo.png" type="Texture" id=3]
+[ext_resource path="res://escenas/jugador.tscn" type="PackedScene" id=4]
+[ext_resource path="res://escenas/generador_T.tscn" type="PackedScene" id=5]
+[ext_resource path="res://escenas/generador_T2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://escenas/generador_P.tscn" type="PackedScene" id=7]
+[ext_resource path="res://escenas/generador_P2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/boton-izq.png" type="Texture" id=9]
+[ext_resource path="res://assets/boton-der.png" type="Texture" id=10]
+[ext_resource path="res://assets/boton-arr.png" type="Texture" id=11]
 
 [sub_resource type="Animation" id=1]
 resource_name = "spawn_T"
@@ -80,43 +81,44 @@ tracks/0/keys = {
 }
 
 [node name="mundo" type="Node"]
+script = ExtResource( 1 )
 
 [node name="Paralax_fondo" type="ParallaxBackground" parent="."]
 
 [node name="Parallax_layer" type="ParallaxLayer" parent="Paralax_fondo"]
 position = Vector2( 0, -1.948 )
 motion_mirroring = Vector2( 2320, 0 )
-script = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="fondo" type="Sprite" parent="Paralax_fondo/Parallax_layer"]
 position = Vector2( 1139.21, 368.863 )
 scale = Vector2( 1.20882, 1.28452 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
-[node name="jugador" parent="." instance=ExtResource( 3 )]
+[node name="jugador" parent="." instance=ExtResource( 4 )]
 
-[node name="generador_T" parent="." instance=ExtResource( 4 )]
+[node name="generador_T" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1350, 720 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="generador_T"]
 autoplay = "spawn_T"
 anims/spawn_T = SubResource( 1 )
 
-[node name="generador_T2" parent="." instance=ExtResource( 5 )]
+[node name="generador_T2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1500, 288 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="generador_T2"]
 autoplay = "spawn_T2"
 anims/spawn_T2 = SubResource( 2 )
 
-[node name="generador_P" parent="." instance=ExtResource( 6 )]
+[node name="generador_P" parent="." instance=ExtResource( 7 )]
 position = Vector2( 0, 800 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="generador_P"]
 autoplay = "spawn_P"
 anims/spawn_P = SubResource( 3 )
 
-[node name="generador_P2" parent="." instance=ExtResource( 7 )]
+[node name="generador_P2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1276, 850 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="generador_P2"]
@@ -134,7 +136,7 @@ margin_bottom = -21.0
 [node name="izquierda" type="TextureButton" parent="MarginContainer"]
 margin_right = 1245.0
 margin_bottom = 120.0
-texture_normal = ExtResource( 8 )
+texture_normal = ExtResource( 9 )
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 anchor_top = 1.0
@@ -147,7 +149,7 @@ margin_bottom = -21.0
 [node name="derecha" type="TextureButton" parent="MarginContainer2"]
 margin_right = 1101.0
 margin_bottom = 120.0
-texture_normal = ExtResource( 9 )
+texture_normal = ExtResource( 10 )
 
 [node name="MarginContainer3" type="MarginContainer" parent="."]
 anchor_top = 1.0
@@ -161,4 +163,11 @@ margin_bottom = -21.0
 [node name="arriba" type="TextureButton" parent="MarginContainer3"]
 margin_right = 125.0
 margin_bottom = 120.0
-texture_normal = ExtResource( 10 )
+texture_normal = ExtResource( 11 )
+
+[node name="Spawn" type="Position2D" parent="."]
+
+[node name="ScoreTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="iniciojuego" from="." to="." method="juego_nuevo"]
