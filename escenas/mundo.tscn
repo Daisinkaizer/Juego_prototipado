@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://escenas/mundo.gd" type="Script" id=1]
 [ext_resource path="res://escenas/Parallax_layer.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://assets/boton-izq.png" type="Texture" id=9]
 [ext_resource path="res://assets/boton-der.png" type="Texture" id=10]
 [ext_resource path="res://assets/boton-arr.png" type="Texture" id=11]
+[ext_resource path="res://escenas/Interfaz.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Animation" id=1]
 resource_name = "spawn_T"
@@ -91,14 +92,15 @@ motion_mirroring = Vector2( 2320, 0 )
 script = ExtResource( 2 )
 
 [node name="fondo" type="Sprite" parent="Paralax_fondo/Parallax_layer"]
-position = Vector2( 1139.21, 368.863 )
+position = Vector2( 1144.16, 366.812 )
 scale = Vector2( 1.20882, 1.28452 )
 texture = ExtResource( 3 )
 
 [node name="jugador" parent="." instance=ExtResource( 4 )]
-position = Vector2( 96.8983, 64.5989 )
+position = Vector2( -19.6586, -28.2149 )
 
 [node name="generador_T" parent="." instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 1350, 720 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="generador_T"]
@@ -106,6 +108,7 @@ autoplay = "spawn_T"
 anims/spawn_T = SubResource( 1 )
 
 [node name="generador_T2" parent="." instance=ExtResource( 6 )]
+editor/display_folded = true
 position = Vector2( 1500, 288 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="generador_T2"]
@@ -113,6 +116,7 @@ autoplay = "spawn_T2"
 anims/spawn_T2 = SubResource( 2 )
 
 [node name="generador_P" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
 position = Vector2( 0, 800 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="generador_P"]
@@ -120,6 +124,7 @@ autoplay = "spawn_P"
 anims/spawn_P = SubResource( 3 )
 
 [node name="generador_P2" parent="." instance=ExtResource( 8 )]
+editor/display_folded = true
 position = Vector2( 1276, 850 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="generador_P2"]
@@ -127,6 +132,7 @@ autoplay = "spawn_P2"
 anims/spawn_P2 = SubResource( 4 )
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+editor/display_folded = true
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -140,6 +146,7 @@ margin_bottom = 120.0
 texture_normal = ExtResource( 9 )
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
+editor/display_folded = true
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -167,9 +174,15 @@ margin_bottom = 120.0
 texture_normal = ExtResource( 11 )
 
 [node name="Spawn" type="Position2D" parent="."]
+position = Vector2( 112.24, 88.4969 )
 
 [node name="ScoreTimer" type="Timer" parent="."]
-autostart = true
+
+[node name="InicioTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="Interfaz" parent="." instance=ExtResource( 12 )]
 
 [connection signal="iniciojuego" from="." to="." method="juego_nuevo"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
+[connection signal="timeout" from="InicioTimer" to="." method="_on_InicioTimer_timeout"]

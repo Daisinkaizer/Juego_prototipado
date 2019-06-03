@@ -7,8 +7,9 @@ var vida = 30
 
 
 func _ready():
-	#hide()
+	hide()
 	screen_size = get_viewport_rect().size
+	$jugador_colision.disabled = true
 
 func _physics_process(delta):
 	#print(vida)
@@ -46,11 +47,15 @@ func dead():
 	$jugador_sprite.play("muerte")
 	velocidad = Vector2(0, 0)
 	$Respawn.start()
-	
-	
-	
-	
-	
+
+func inicio(pos):
+	position = pos
+	show()
+	$jugador_colision.disabled = false
+
+
+
+
 
 func _on_Timer_timeout():
 	get_tree().change_scene("res://escenas/Titlescreen.tscn")
