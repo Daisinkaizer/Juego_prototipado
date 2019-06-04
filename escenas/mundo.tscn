@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://escenas/mundo.gd" type="Script" id=1]
 [ext_resource path="res://escenas/Parallax_layer.gd" type="Script" id=2]
@@ -8,10 +8,7 @@
 [ext_resource path="res://escenas/generador_T2.tscn" type="PackedScene" id=6]
 [ext_resource path="res://escenas/generador_P.tscn" type="PackedScene" id=7]
 [ext_resource path="res://escenas/generador_P2.tscn" type="PackedScene" id=8]
-[ext_resource path="res://assets/boton-izq.png" type="Texture" id=9]
-[ext_resource path="res://assets/boton-der.png" type="Texture" id=10]
-[ext_resource path="res://assets/boton-arr.png" type="Texture" id=11]
-[ext_resource path="res://escenas/Interfaz.tscn" type="PackedScene" id=12]
+[ext_resource path="res://escenas/Interfaz.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "spawn_T"
@@ -131,48 +128,6 @@ position = Vector2( 1276, 850 )
 autoplay = "spawn_P2"
 anims/spawn_P2 = SubResource( 4 )
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-editor/display_folded = true
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 35.0
-margin_top = -141.0
-margin_bottom = -21.0
-
-[node name="izquierda" type="TextureButton" parent="MarginContainer"]
-margin_right = 1245.0
-margin_bottom = 120.0
-texture_normal = ExtResource( 9 )
-
-[node name="MarginContainer2" type="MarginContainer" parent="."]
-editor/display_folded = true
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 179.0
-margin_top = -141.0
-margin_bottom = -21.0
-
-[node name="derecha" type="TextureButton" parent="MarginContainer2"]
-margin_right = 1101.0
-margin_bottom = 120.0
-texture_normal = ExtResource( 10 )
-
-[node name="MarginContainer3" type="MarginContainer" parent="."]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 1126.0
-margin_top = -141.0
-margin_right = -29.0
-margin_bottom = -21.0
-
-[node name="arriba" type="TextureButton" parent="MarginContainer3"]
-margin_right = 125.0
-margin_bottom = 120.0
-texture_normal = ExtResource( 11 )
-
 [node name="Spawn" type="Position2D" parent="."]
 position = Vector2( 112.24, 88.4969 )
 
@@ -181,8 +136,9 @@ position = Vector2( 112.24, 88.4969 )
 [node name="InicioTimer" type="Timer" parent="."]
 wait_time = 3.0
 
-[node name="Interfaz" parent="." instance=ExtResource( 12 )]
+[node name="Interfaz" parent="." instance=ExtResource( 9 )]
 
 [connection signal="iniciojuego" from="." to="." method="juego_nuevo"]
+[connection signal="muerto" from="jugador" to="." method="game_over"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
 [connection signal="timeout" from="InicioTimer" to="." method="_on_InicioTimer_timeout"]

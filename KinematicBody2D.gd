@@ -4,7 +4,7 @@ var screen_size;
 var gravedad = 15;
 var is_dead = false
 var vida = 30
-
+signal muerto
 
 func _ready():
 	hide()
@@ -47,6 +47,7 @@ func dead():
 	$jugador_sprite.play("muerte")
 	velocidad = Vector2(0, 0)
 	$Respawn.start()
+	emit_signal("muerto")
 
 func inicio(pos):
 	position = pos
@@ -59,3 +60,25 @@ func inicio(pos):
 
 func _on_Timer_timeout():
 	get_tree().change_scene("res://escenas/Titlescreen.tscn")
+
+#cuando el boton arriba se pulsa:
+func _on_Botonarriba_pressed():
+	velocidad.y = -250
+
+#cuando el boton derecha se pulsa:
+func _on_BotonDer_pressed():
+	velocidad.x += 300;
+	$SoltarBoton.start()
+
+#cuando el boton izquierda se pulsa:
+func _on_BotonIzq_pressed():
+	velocidad.x -= 300;
+	$SoltarBoton.start()
+	
+
+
+
+
+
+func _on_SoltarBoton_timeout():
+	velocidad.x = 0

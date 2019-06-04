@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://assets/buzo1.png" type="Texture" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://assets/buzo5.png" type="Texture" id=5]
 [ext_resource path="res://assets/buzo4.png" type="Texture" id=6]
 [ext_resource path="res://assets/daño.png" type="Texture" id=7]
+[ext_resource path="res://assets/boton-arr.png" type="Texture" id=8]
+[ext_resource path="res://assets/boton-izq.png" type="Texture" id=9]
+[ext_resource path="res://assets/boton-der.png" type="Texture" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -26,9 +29,6 @@ extents = Vector2( 61.9228, 10 )
 
 [node name="jugador" type="KinematicBody2D"]
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="jugador_sprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.364023, 0.364023 )
@@ -44,4 +44,57 @@ shape = SubResource( 2 )
 [node name="Respawn" type="Timer" parent="."]
 one_shot = true
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Arriba" type="MarginContainer" parent="CanvasLayer"]
+margin_left = 1141.72
+margin_top = 590.0
+margin_right = 1266.72
+margin_bottom = 710.0
+
+[node name="Botonarriba" type="TextureButton" parent="CanvasLayer/Arriba"]
+margin_right = 125.0
+margin_bottom = 120.0
+texture_normal = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Izquierda" type="MarginContainer" parent="CanvasLayer"]
+margin_left = 38.0601
+margin_top = 551.148
+margin_right = 163.06
+margin_bottom = 671.148
+
+[node name="BotonIzq" type="TextureButton" parent="CanvasLayer/Izquierda"]
+margin_right = 125.0
+margin_bottom = 120.0
+texture_normal = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Derecha" type="MarginContainer" parent="CanvasLayer"]
+margin_left = 189.707
+margin_top = 551.148
+margin_right = 314.707
+margin_bottom = 671.148
+
+[node name="BotonDer" type="TextureButton" parent="CanvasLayer/Derecha"]
+margin_right = 125.0
+margin_bottom = 120.0
+texture_normal = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="SoltarBoton" type="Timer" parent="."]
+wait_time = 0.1
+
 [connection signal="timeout" from="Respawn" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/Arriba/Botonarriba" to="." method="_on_Botonarriba_pressed"]
+[connection signal="toggled" from="CanvasLayer/Arriba/Botonarriba" to="." method="_on_Botonarriba_toggled"]
+[connection signal="pressed" from="CanvasLayer/Izquierda/BotonIzq" to="." method="_on_BotonIzq_pressed"]
+[connection signal="pressed" from="CanvasLayer/Derecha/BotonDer" to="." method="_on_BotonDer_pressed"]
+[connection signal="timeout" from="SoltarBoton" to="." method="_on_SoltarBoton_timeout"]

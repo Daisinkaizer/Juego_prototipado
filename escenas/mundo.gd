@@ -13,7 +13,7 @@ func _ready():
 	juego_nuevo()
 	
 	
-	$Interfaz.mostrar_mensaje("lol")
+	$Interfaz.mostrar_mensaje("¡Listo!")
 	
 
 
@@ -40,3 +40,7 @@ func _on_ScoreTimer_timeout():
 func _on_InicioTimer_timeout():
 	
 	pass # Replace with function body.
+
+func game_over():
+	$Interfaz.mostrar_mensaje("¡Pezdiste!")
+	
