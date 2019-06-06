@@ -36,11 +36,11 @@ func _physics_process(delta):
 			for i in range(get_slide_count()):
 				if "tiburoncin" in get_slide_collision(i).collider.name:
 					vida -= 1
-				if "piraña" in get_slide_collision(i).collider.name:
+				if "pirana" in get_slide_collision(i).collider.name:
 					vida -= 1
 				if vida <= 0:
 						dead()
-						
+				print (vida)
 
 func dead():
 	is_dead = true
@@ -63,7 +63,7 @@ func _on_Timer_timeout():
 
 #cuando el boton arriba se pulsa:
 func _on_Botonarriba_pressed():
-	velocidad.y = -250
+	velocidad.y -= 250
 
 #cuando el boton derecha se pulsa:
 func _on_BotonDer_pressed():

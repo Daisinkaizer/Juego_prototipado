@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/boton-der.png-fe7a88c8040f8f49494886efeb7f1557.stex"
+path="res://.import/boton_arr.png-647cd3577e0a50d49bb51968d6e3d13a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/boton-der.png"
-dest_files=[ "res://.import/boton-der.png-fe7a88c8040f8f49494886efeb7f1557.stex" ]
+source_file="res://assets/boton_arr.png"
+dest_files=[ "res://.import/boton_arr.png-647cd3577e0a50d49bb51968d6e3d13a.stex" ]
 
 [params]
 

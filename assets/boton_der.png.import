@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/piraña2.png-5cf8205f36a2c0d988ebdb63e06bf4d8.stex"
+path="res://.import/boton_der.png-bee930725a8fcf5db2dc9316ac53c209.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/piraña2.png"
-dest_files=[ "res://.import/piraña2.png-5cf8205f36a2c0d988ebdb63e06bf4d8.stex" ]
+source_file="res://assets/boton_der.png"
+dest_files=[ "res://.import/boton_der.png-bee930725a8fcf5db2dc9316ac53c209.stex" ]
 
 [params]
 

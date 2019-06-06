@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/piraña3.png-665255e2c2bbd96e3dc4cb9ff12b66ca.stex"
+path="res://.import/pirana1.png-a607a16126d567680fca37cd9b1b2ab5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/piraña3.png"
-dest_files=[ "res://.import/piraña3.png-665255e2c2bbd96e3dc4cb9ff12b66ca.stex" ]
+source_file="res://assets/pirana1.png"
+dest_files=[ "res://.import/pirana1.png-a607a16126d567680fca37cd9b1b2ab5.stex" ]
 
 [params]
 

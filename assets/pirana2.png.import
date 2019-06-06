@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/boton-arr.png-7a87d6ad2c2396afc86ca1b2a0bdee07.stex"
+path="res://.import/pirana2.png-25261ca035c0288bef73afb247ebaf99.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/boton-arr.png"
-dest_files=[ "res://.import/boton-arr.png-7a87d6ad2c2396afc86ca1b2a0bdee07.stex" ]
+source_file="res://assets/pirana2.png"
+dest_files=[ "res://.import/pirana2.png-25261ca035c0288bef73afb247ebaf99.stex" ]
 
 [params]
 

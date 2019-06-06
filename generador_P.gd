@@ -1,5 +1,5 @@
 extends Node2D
-var objetivo = preload("res://escenas/piraña.tscn")
+var objetivo = preload("res://escenas/pirana.tscn")
 
 func _ready():
 	$Timer.start(rand_range(2,4))

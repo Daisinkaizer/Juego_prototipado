@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://escenas/piraña.gd" type="Script" id=1]
-[ext_resource path="res://assets/piraña1.png" type="Texture" id=2]
-[ext_resource path="res://assets/piraña2.png" type="Texture" id=3]
-[ext_resource path="res://assets/piraña3.png" type="Texture" id=4]
+[ext_resource path="res://escenas/pirana.gd" type="Script" id=1]
+[ext_resource path="res://assets/pirana1.png" type="Texture" id=2]
+[ext_resource path="res://assets/pirana2.png" type="Texture" id=3]
+[ext_resource path="res://assets/pirana3.png" type="Texture" id=4]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -16,20 +16,19 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 88.3977, 61.4737 )
 
-[node name="piraña" type="KinematicBody2D"]
+[node name="pirana" type="KinematicBody2D"]
 scale = Vector2( 0.102043, 0.102043 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite_piraña" type="AnimatedSprite" parent="."]
+[node name="Sprite_pirana" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "piraña"
-frame = 2
 playing = true
 
-[node name="Collision_piraña" type="CollisionShape2D" parent="."]
+[node name="Collision_pirana" type="CollisionShape2D" parent="."]
 position = Vector2( -45.8231, 8.59183 )
 scale = Vector2( 1.19193, 4.73349 )
 shape = SubResource( 2 )

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Lovepik_com-400240389-seaweed.png-8a440f0920aecf9f2397b9a425590a3e.stex"
+path="res://.import/boton_izq.png-4268708ee6c0cee75bb593b3fb2cb1cb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Lovepik_com-400240389-seaweed.png"
-dest_files=[ "res://.import/Lovepik_com-400240389-seaweed.png-8a440f0920aecf9f2397b9a425590a3e.stex" ]
+source_file="res://assets/boton_izq.png"
+dest_files=[ "res://.import/boton_izq.png-4268708ee6c0cee75bb593b3fb2cb1cb.stex" ]
 
 [params]
 

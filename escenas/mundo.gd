@@ -3,12 +3,13 @@ var Score = 0
 signal iniciojuego
 
 func _ready():
-	$jugador.hide()
+	#$jugador.hide()
 	$generador_P.hide()
 	$generador_P2.hide()
 	$generador_T.hide()
 	$generador_T2.hide()
 	$InicioTimer.start()
+	
 	yield($InicioTimer, "timeout")
 	juego_nuevo()
 	
@@ -28,6 +29,7 @@ func juego_nuevo():
 	$generador_P2.show()
 	$generador_T.show()
 	$generador_T2.show()
+	
 
 
 func _on_ScoreTimer_timeout():
