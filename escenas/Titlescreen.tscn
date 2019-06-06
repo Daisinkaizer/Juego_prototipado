@@ -57,13 +57,12 @@ texture_focused = ExtResource( 6 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2( 0, -1.948 )
-motion_mirroring = Vector2( 2320, 0 )
+motion_mirroring = Vector2( 2396, 0 )
 script = ExtResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 scale = Vector2( 1.2485, 1.2485 )
 texture = ExtResource( 8 )
 centered = false
-
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/TextureButton2" to="." method="_on_TextureButton2_pressed"]

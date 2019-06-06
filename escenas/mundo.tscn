@@ -137,7 +137,6 @@ position = Vector2( 112.24, 88.4969 )
 wait_time = 3.0
 
 [node name="Interfaz" parent="." instance=ExtResource( 9 )]
-
 [connection signal="iniciojuego" from="." to="." method="juego_nuevo"]
 [connection signal="muerto" from="jugador" to="." method="game_over"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
