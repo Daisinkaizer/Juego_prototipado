@@ -11,9 +11,6 @@
 [ext_resource path="res://assets/boton_izq.png" type="Texture" id=9]
 [ext_resource path="res://assets/boton_der.png" type="Texture" id=10]
 
-
-
-
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ) ],
@@ -37,7 +34,7 @@ script = ExtResource( 1 )
 scale = Vector2( 0.364023, 0.364023 )
 frames = SubResource( 1 )
 animation = "buzo"
-frame = 6
+frame = 4
 playing = true
 
 [node name="jugador_colision" type="CollisionShape2D" parent="."]
@@ -95,9 +92,13 @@ __meta__ = {
 [node name="SoltarBoton" type="Timer" parent="."]
 wait_time = 0.1
 
+[node name="CoolDown" type="Timer" parent="."]
+wait_time = 2.0
+
 [connection signal="timeout" from="Respawn" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="CanvasLayer/Arriba/Botonarriba" to="." method="_on_Botonarriba_pressed"]
 [connection signal="toggled" from="CanvasLayer/Arriba/Botonarriba" to="." method="_on_Botonarriba_toggled"]
 [connection signal="pressed" from="CanvasLayer/Izquierda/BotonIzq" to="." method="_on_BotonIzq_pressed"]
 [connection signal="pressed" from="CanvasLayer/Derecha/BotonDer" to="." method="_on_BotonDer_pressed"]
 [connection signal="timeout" from="SoltarBoton" to="." method="_on_SoltarBoton_timeout"]
+[connection signal="timeout" from="CoolDown" to="." method="_on_CoolDown_timeout"]

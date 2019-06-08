@@ -3,7 +3,7 @@ var velocidad = Vector2(0,0)
 var screen_size;
 var gravedad = 15;
 var is_dead = false
-var vida = 30
+var vida = 3
 signal muerto
 
 func _ready():
@@ -35,9 +35,9 @@ func _physics_process(delta):
 		if get_slide_count() > 0:
 			for i in range(get_slide_count()):
 				if "tiburoncin" in get_slide_collision(i).collider.name:
-					vida -= 1
+					dano()
 				if "pirana" in get_slide_collision(i).collider.name:
-					vida -= 1
+					dano()
 				if vida <= 0:
 						dead()
 				print (vida)
@@ -75,10 +75,16 @@ func _on_BotonIzq_pressed():
 	velocidad.x -= 300;
 	$SoltarBoton.start()
 	
-
-
-
-
-
 func _on_SoltarBoton_timeout():
 	velocidad.x = 0
+
+func dano():
+	vida -= 1
+	$jugador_sprite.play("muerte")
+	$jugador_colision.disabled = true
+	$CoolDown.start()
+
+func _on_CoolDown_timeout():
+	$jugador_sprite.play("buzo")
+	$jugador_colision.disabled = false
+	
