@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/anillo1.png" type="Texture" id=1]
+
+[node name="Anillo1" type="Sprite"]
+scale = Vector2( 0.246547, 0.246547 )
+texture = ExtResource( 1 )
+

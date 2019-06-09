@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://escenas/Anillo.gd" type="Script" id=1]
+[ext_resource path="res://escenas/Anillo1.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -4.4118, -0.256409, 0, 0, 0, 0, 1275.97, 2.53308, 0, 0, 0, 0, 1275.97, 716.647, 0, 0, 0, 0, 6.74622, 713.858, 0, 0, 0, 0, -4.4118, -0.256409 )
+}
+
+[node name="Anillo" type="Node2D"]
+script = ExtResource( 1 )
+mob = ExtResource( 2 )
+
+[node name="caminoanillo" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="movimientoanillo" type="PathFollow2D" parent="caminoanillo"]
+position = Vector2( -4.4118, -0.256409 )
+rotation = 0.00217863
+
+[node name="RingTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="RingTimer" to="." method="_on_RingTimer_timeout"]
