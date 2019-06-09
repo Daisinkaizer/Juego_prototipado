@@ -36,8 +36,10 @@ func _physics_process(delta):
 			for i in range(get_slide_count()):
 				if "tiburoncin" in get_slide_collision(i).collider.name:
 					dano()
+					corazon()
 				if "pirana" in get_slide_collision(i).collider.name:
 					dano()
+					corazon()
 				if vida <= 0:
 						dead()
 				print (vida)
@@ -88,3 +90,12 @@ func _on_CoolDown_timeout():
 	$jugador_sprite.play("buzo")
 	$jugador_colision.disabled = false
 	
+
+func corazon():
+	if vida <= 2:
+		$CanvasLayer2/corazon3.hide()
+	if vida <= 1:
+		$CanvasLayer2/corazon2.hide()
+	if vida <= 0:
+		$CanvasLayer2/Corazon.hide()
+
