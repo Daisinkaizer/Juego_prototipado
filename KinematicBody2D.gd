@@ -37,9 +37,15 @@ func _physics_process(delta):
 				if "tiburoncin" in get_slide_collision(i).collider.name:
 					dano()
 					corazon()
+					$SonidoGolpe.play(1)
+					yield($StopGolpe, "timeout")
+					$SonidoGolpe.stop()
 				if "pirana" in get_slide_collision(i).collider.name:
 					dano()
 					corazon()
+					$SonidoGolpe.play(1)
+					yield($StopGolpe, "timeout")
+					$SonidoGolpe.stop()
 				if vida <= 0:
 						dead()
 				print (vida)
@@ -66,6 +72,8 @@ func _on_Timer_timeout():
 #cuando el boton arriba se pulsa:
 func _on_Botonarriba_pressed():
 	velocidad.y -= 250
+	if velocidad.y > 500:
+		velocidad.y = 0
 
 #cuando el boton derecha se pulsa:
 func _on_BotonDer_pressed():
@@ -85,6 +93,7 @@ func dano():
 	$jugador_sprite.play("muerte")
 	$jugador_colision.disabled = true
 	$CoolDown.start()
+	$SonidoGolpe.stop()
 
 func _on_CoolDown_timeout():
 	$jugador_sprite.play("buzo")
@@ -99,3 +108,8 @@ func corazon():
 	if vida <= 0:
 		$CanvasLayer2/Corazon.hide()
 
+
+
+func _on_StopGolpe_timeout():
+	$SonidoGolpe.stop()
+	$SonidoGolpe.stream_paused

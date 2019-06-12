@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/TS - Beat Y.ogg-5712763ec62f059299755eafec7cf2a1.oggstr"
+
+[deps]
+
+source_file="res://Musica/TS - Beat Y.ogg"
+dest_files=[ "res://.import/TS - Beat Y.ogg-5712763ec62f059299755eafec7cf2a1.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

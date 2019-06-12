@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://escenas/Titlescreen.gd" type="Script" id=1]
 [ext_resource path="res://assets/titulo.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/seleccionado.png" type="Texture" id=6]
 [ext_resource path="res://escenas/ParallaxLayer.gd" type="Script" id=7]
 [ext_resource path="res://assets/fondo.png" type="Texture" id=8]
+[ext_resource path="res://Musica/Humble Match.ogg" type="AudioStream" id=9]
 
 [node name="Titlescreen" type="Node"]
 script = ExtResource( 1 )
@@ -64,6 +65,11 @@ script = ExtResource( 7 )
 scale = Vector2( 1.2485, 1.2485 )
 texture = ExtResource( 8 )
 centered = false
+
+[node name="MusicaScreen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -11.696
+autoplay = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/TextureButton2" to="." method="_on_TextureButton2_pressed"]
