@@ -3,11 +3,11 @@
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://Musica/golpe.ogg" type="AudioStream" id=2]
 [ext_resource path="res://assets/buzo1.png" type="Texture" id=3]
-[ext_resource path="res://assets/daño.png" type="Texture" id=4]
-[ext_resource path="res://assets/buzo2.png" type="Texture" id=5]
-[ext_resource path="res://assets/buzo3.png" type="Texture" id=6]
-[ext_resource path="res://assets/buzo5.png" type="Texture" id=7]
-[ext_resource path="res://assets/buzo4.png" type="Texture" id=8]
+[ext_resource path="res://assets/buzo2.png" type="Texture" id=4]
+[ext_resource path="res://assets/buzo3.png" type="Texture" id=5]
+[ext_resource path="res://assets/buzo5.png" type="Texture" id=6]
+[ext_resource path="res://assets/buzo4.png" type="Texture" id=7]
+[ext_resource path="res://assets/daño.png" type="Texture" id=8]
 [ext_resource path="res://assets/boton_arr.png" type="Texture" id=9]
 [ext_resource path="res://assets/boton_izq.png" type="Texture" id=10]
 [ext_resource path="res://assets/boton_der.png" type="Texture" id=11]
@@ -15,15 +15,15 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
-"loop": true,
-"name": "muerte",
-"speed": 12.0
-}, {
-"frames": [ ExtResource( 3 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "buzo",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "muerte",
+"speed": 12.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -40,6 +40,7 @@ volume_db = -7.068
 scale = Vector2( 0.364023, 0.364023 )
 frames = SubResource( 1 )
 animation = "buzo"
+frame = 4
 playing = true
 
 [node name="jugador_colision" type="CollisionShape2D" parent="."]
