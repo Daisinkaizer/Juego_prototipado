@@ -70,6 +70,5 @@ centered = false
 stream = ExtResource( 9 )
 volume_db = -11.696
 autoplay = true
-
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/TextureButton2" to="." method="_on_TextureButton2_pressed"]

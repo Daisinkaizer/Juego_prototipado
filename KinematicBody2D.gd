@@ -38,14 +38,14 @@ func _physics_process(delta):
 					dano()
 					corazon()
 					$SonidoGolpe.play(1)
-					yield($StopGolpe, "timeout")
-					$SonidoGolpe.stop()
+					#yield($StopGolpe, "timeout")
+					$StopGolpe.start()
 				if "pirana" in get_slide_collision(i).collider.name:
 					dano()
 					corazon()
 					$SonidoGolpe.play(1)
-					yield($StopGolpe, "timeout")
-					$SonidoGolpe.stop()
+					#yield($StopGolpe, "timeout")
+					$StopGolpe.start()
 				if vida <= 0:
 						dead()
 				print (vida)
