@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/daño.png-84c12843cb7d4190f33110e5dbc90152.stex"
+path="res://.import/dano.png-4e6879471dbff1e1e2c366e7bd4eb42b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/daño.png"
-dest_files=[ "res://.import/daño.png-84c12843cb7d4190f33110e5dbc90152.stex" ]
+source_file="res://assets/dano.png"
+dest_files=[ "res://.import/dano.png-4e6879471dbff1e1e2c366e7bd4eb42b.stex" ]
 
 [params]
 

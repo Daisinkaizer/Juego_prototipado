@@ -7,11 +7,12 @@
 [ext_resource path="res://assets/buzo3.png" type="Texture" id=5]
 [ext_resource path="res://assets/buzo5.png" type="Texture" id=6]
 [ext_resource path="res://assets/buzo4.png" type="Texture" id=7]
-[ext_resource path="res://assets/daño.png" type="Texture" id=8]
+[ext_resource path="res://assets/dano.png" type="Texture" id=8]
 [ext_resource path="res://assets/boton_arr.png" type="Texture" id=9]
 [ext_resource path="res://assets/boton_izq.png" type="Texture" id=10]
 [ext_resource path="res://assets/boton_der.png" type="Texture" id=11]
 [ext_resource path="res://assets/corazon.png" type="Texture" id=12]
+
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
