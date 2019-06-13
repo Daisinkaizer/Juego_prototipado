@@ -37,11 +37,13 @@ func _physics_process(delta):
 				if "tiburoncin" in get_slide_collision(i).collider.name:
 					dano()
 					corazon()
-					sonido()
+					$StopGolpe.start()
+					$SonidoGolpe.play()
 				if "pirana" in get_slide_collision(i).collider.name:
 					dano()
 					corazon()
-					sonido()
+					$StopGolpe.start()
+					$SonidoGolpe.play()
 				if vida <= 0:
 						dead()
 				print (vida)
@@ -107,4 +109,4 @@ func corazon():
 
 
 func sonido():
-	$SonidoGolpe.play()
+	$SonidoGolpe.stop()

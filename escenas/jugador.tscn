@@ -13,7 +13,6 @@
 [ext_resource path="res://assets/boton_der.png" type="Texture" id=11]
 [ext_resource path="res://assets/corazon.png" type="Texture" id=12]
 
-
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 6 ) ],
@@ -41,7 +40,6 @@ volume_db = -7.068
 scale = Vector2( 0.364023, 0.364023 )
 frames = SubResource( 1 )
 animation = "buzo"
-frame = 4
 playing = true
 
 [node name="jugador_colision" type="CollisionShape2D" parent="."]
@@ -52,7 +50,6 @@ shape = SubResource( 2 )
 one_shot = true
 
 [node name="StopGolpe" type="Timer" parent="."]
-wait_time = 0.01
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -121,9 +118,8 @@ texture = ExtResource( 12 )
 position = Vector2( 153.042, 39 )
 scale = Vector2( 0.0237, 0.0237 )
 texture = ExtResource( 12 )
-
 [connection signal="timeout" from="Respawn" to="." method="_on_Timer_timeout"]
-[connection signal="timeout" from="StopGolpe" to="." method="_on_StopGolpe_timeout"]
+[connection signal="timeout" from="StopGolpe" to="." method="sonido"]
 [connection signal="pressed" from="CanvasLayer/Arriba/Botonarriba" to="." method="_on_Botonarriba_pressed"]
 [connection signal="toggled" from="CanvasLayer/Arriba/Botonarriba" to="." method="_on_Botonarriba_toggled"]
 [connection signal="pressed" from="CanvasLayer/Izquierda/BotonIzq" to="." method="_on_BotonIzq_pressed"]
