@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://escenas/Titlescreen.gd" type="Script" id=1]
 [ext_resource path="res://assets/titulo.png" type="Texture" id=2]
@@ -10,7 +10,6 @@
 [ext_resource path="res://assets/fondo.png" type="Texture" id=8]
 [ext_resource path="res://Musica/Humble Match.ogg" type="AudioStream" id=9]
 [ext_resource path="res://escenas/generador_T.tscn" type="PackedScene" id=10]
-[ext_resource path="res://escenas/generador_P.tscn" type="PackedScene" id=11]
 
 [node name="Titlescreen" type="Node"]
 script = ExtResource( 1 )
@@ -75,9 +74,6 @@ autoplay = true
 
 [node name="generador_T" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1356.47, 299.752 )
-
-[node name="generador_P" parent="." instance=ExtResource( 11 )]
-position = Vector2( 400.058, 791.952 )
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/TextureButton2" to="." method="_on_TextureButton2_pressed"]
