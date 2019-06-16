@@ -34,5 +34,4 @@ text = "¡Preparado!"
 
 [node name="Mensajetimer" type="Timer" parent="."]
 wait_time = 2.5
-
 [connection signal="timeout" from="Mensajetimer" to="." method="_on_Mensaje_timer_timeout"]
