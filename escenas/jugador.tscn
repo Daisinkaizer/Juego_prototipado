@@ -58,43 +58,39 @@ margin_left = 1141.72
 margin_top = 550.0
 margin_right = 1266.72
 margin_bottom = 670.0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Botonarriba" type="TextureButton" parent="CanvasLayer/Arriba"]
 margin_right = 125.0
 margin_bottom = 120.0
 texture_normal = ExtResource( 9 )
 expand = true
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Izquierda" type="MarginContainer" parent="CanvasLayer"]
-margin_left = 38.06
+margin_left = 38.0
 margin_top = 550.0
-margin_right = 163.06
-margin_bottom = 670.0
+margin_right = 494.0
+margin_bottom = 1005.0
+rect_scale = Vector2( 0.29773, 0.254122 )
 
 [node name="BotonIzq" type="TextureButton" parent="CanvasLayer/Izquierda"]
-margin_right = 125.0
-margin_bottom = 120.0
+margin_right = 456.0
+margin_bottom = 455.0
 texture_normal = ExtResource( 10 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Derecha" type="MarginContainer" parent="CanvasLayer"]
 margin_left = 191.139
 margin_top = 550.0
 margin_right = 316.139
 margin_bottom = 670.0
+rect_scale = Vector2( 0.298174, 0.248306 )
 
 [node name="BotonDer" type="TextureButton" parent="CanvasLayer/Derecha"]
-margin_right = 125.0
-margin_bottom = 120.0
+margin_right = 456.0
+margin_bottom = 455.0
 texture_normal = ExtResource( 11 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="SoltarBoton" type="Timer" parent="."]
 wait_time = 0.1
@@ -118,6 +114,7 @@ texture = ExtResource( 12 )
 position = Vector2( 153.042, 39 )
 scale = Vector2( 0.0237, 0.0237 )
 texture = ExtResource( 12 )
+
 [connection signal="timeout" from="Respawn" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="StopGolpe" to="." method="sonido"]
 [connection signal="pressed" from="CanvasLayer/Arriba/Botonarriba" to="." method="_on_Botonarriba_pressed"]
