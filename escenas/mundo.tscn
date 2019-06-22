@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://escenas/mundo.gd" type="Script" id=1]
 [ext_resource path="res://escenas/Parallax_layer.gd" type="Script" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://icon.png" type="Texture" id=10]
 [ext_resource path="res://escenas/Spawn2.gd" type="Script" id=11]
 [ext_resource path="res://escenas/tiburoncin.tscn" type="PackedScene" id=12]
+[ext_resource path="res://escenas/Spawn3.gd" type="Script" id=13]
 
 [sub_resource type="Animation" id=1]
 resource_name = "movimientospawn"
@@ -45,6 +46,23 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1297.84, 6.1912 ), Vector2( 1297.84, 711.178 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "movimientotiburon2"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1289.05, 29.3259 ), Vector2( 1333.38, 68.9815 ), Vector2( 1296.36, 123.526 ), Vector2( 1327.53, 160.538 ), Vector2( 1308.05, 197.55 ), Vector2( 1337.27, 230.666 ), Vector2( 1310.61, 269.626 ), Vector2( 1312.67, 396.758 ), Vector2( 1349.57, 505.436 ), Vector2( 1316.77, 589.508 ), Vector2( 1331.12, 692.034 ) ]
 }
 
 [node name="mundo" type="Node" groups=[
@@ -89,7 +107,7 @@ wait_time = 15.0
 autostart = true
 
 [node name="Spawn1" type="Position2D" parent="."]
-position = Vector2( 394.075, 741.808 )
+position = Vector2( 224.847, 741.808 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -100,6 +118,7 @@ npc = ExtResource( 9 )
 wait_time = 3.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Spawn1"]
+playback_speed = 0.5
 anims/movimientospawn = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Spawn1"]
@@ -130,8 +149,23 @@ position = Vector2( 1.63354, -1.18801 )
 scale = Vector2( 0.629017, 0.730194 )
 texture = ExtResource( 10 )
 
+[node name="Spawn3" type="Position2D" parent="."]
+position = Vector2( 1295.48, 17.0086 )
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_group_": true
+}
+npc = ExtResource( 12 )
+
+[node name="Timer" type="Timer" parent="Spawn3"]
+wait_time = 3.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Spawn3"]
+anims/movimientotiburon2 = SubResource( 3 )
+
 [connection signal="muerto" from="jugador" to="." method="game_over"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
 [connection signal="timeout" from="InicioTimer" to="." method="_on_InicioTimer_timeout"]
 [connection signal="timeout" from="Spawn1/Timer" to="Spawn1" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Spawn2/Timer" to="Spawn2" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Spawn3/Timer" to="Spawn3" method="_on_Timer_timeout"]
