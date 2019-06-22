@@ -1,5 +1,6 @@
 extends Node2D
-var Objetivo = preload("res://escenas/tiburoncin.tscn")
+signal megalodon
+var Objetivo = preload("res://escenas/megalodon.tscn")
 
 func _ready():
 	pass
@@ -7,9 +8,8 @@ func _ready():
 func _on_Timer_timeout():
 	var objetivoInstancia = Objetivo.instance()
 	add_child(objetivoInstancia)
-	pass
 
-func spawntiburon():
-	$Timer.start(rand_range(4,8))
+func spawnlodon():
+	$Timerlodon.start(10)
 	var objetivoInstancia = Objetivo.instance()
 	add_child(objetivoInstancia)
