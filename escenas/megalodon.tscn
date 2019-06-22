@@ -1,11 +1,31 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://megalodon.gd" type="Script" id=1]
+[ext_resource path="res://assets/mega1.png" type="Texture" id=2]
+[ext_resource path="res://assets/mega2.png" type="Texture" id=3]
+[ext_resource path="res://assets/mega3.png" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="megalodon" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
 [node name="megalodon_sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+speed_scale = 0.7
+playing = true
+flip_h = true
 
-[node name="megalodon_colision" type="CollisionShape2D" parent="megalodon_sprite"]
+[node name="megalodon_colision" type="CollisionPolygon2D" parent="."]
+position = Vector2( 178.592, 68.6082 )
+rotation = 1.56654
+scale = Vector2( 22.3278, 31.4312 )
+build_mode = 1
+polygon = PoolVector2Array( 0.722968, -9.81392, -4.71425, -3.7398, -6.10927, 3.73732, -10.7843, 6.55265, -5.73268, 8.48623, -1.69054, 21.1592, 2.95238, 12.445, 4.94095, -3.95037 )
 

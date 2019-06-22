@@ -14,19 +14,24 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 149.841, 16.5703 )
+extents = Vector2( 61.1335, 16.5703 )
 
 [node name="tiburoncin" type="KinematicBody2D"]
 scale = Vector2( 0.654061, 0.654061 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite_tiburoncin" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.34122, 0.34122 )
 frames = SubResource( 1 )
 animation = "tiburoncin"
+frame = 1
 playing = true
 
 [node name="Collision_tiburoncin" type="CollisionShape2D" parent="."]
-position = Vector2( 1.43195, 21.4796 )
+position = Vector2( -93.5929, 24.6827 )
 scale = Vector2( 1, 2.63546 )
 shape = SubResource( 2 )
+

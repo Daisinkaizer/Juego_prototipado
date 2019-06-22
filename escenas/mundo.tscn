@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://escenas/mundo.gd" type="Script" id=1]
 [ext_resource path="res://escenas/Parallax_layer.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://escenas/generador_P2.tscn" type="PackedScene" id=8]
 [ext_resource path="res://escenas/Interfaz.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Musica/Markalo goes to the disco.ogg" type="AudioStream" id=10]
+[ext_resource path="res://escenas/Generador_M.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Animation" id=1]
 resource_name = "spawn_T"
@@ -141,6 +142,9 @@ wait_time = 3.0
 [node name="MusicaFondo" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
 autoplay = true
+
+[node name="Generador_M" parent="." instance=ExtResource( 11 )]
+position = Vector2( -155.841, 342.851 )
 
 [connection signal="iniciojuego" from="." to="." method="juego_nuevo"]
 [connection signal="muerto" from="jugador" to="." method="game_over"]

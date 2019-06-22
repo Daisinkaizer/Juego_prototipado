@@ -14,7 +14,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 88.3977, 61.4737 )
+extents = Vector2( 88.3977, 19.8059 )
 
 [node name="pirana" type="KinematicBody2D"]
 scale = Vector2( 0.102043, 0.102043 )
@@ -29,6 +29,7 @@ animation = "piraña"
 playing = true
 
 [node name="Collision_pirana" type="CollisionShape2D" parent="."]
-position = Vector2( -45.8231, 8.59183 )
+position = Vector2( -48.5414, -200.722 )
 scale = Vector2( 1.19193, 4.73349 )
 shape = SubResource( 2 )
+
