@@ -17,10 +17,14 @@ func _physics_process(delta):
 
 		if velocidad.y < 100:
 			velocidad.y += gravedad;
-		if Input.is_action_pressed("ui_right")and velocidad.x < 100:
-			velocidad.x += 30;
-		if Input.is_action_pressed("ui_left") and velocidad.x > -100:
-			velocidad.x -= 30;
+		if Input.is_action_pressed("ui_right"):
+			velocidad.x = 300;
+		if velocidad.x > 0:
+			velocidad.x -= 50 
+		if Input.is_action_pressed("ui_left"):
+			velocidad.x = -300;
+		if velocidad.x < 0:
+			velocidad.x += 50
 		if Input.is_action_just_released("ui_right"):
 			velocidad.x = 0;
 		if Input.is_action_just_released("ui_left"):
@@ -69,18 +73,22 @@ func _on_Timer_timeout():
 
 #cuando el boton arriba se pulsa:
 func _on_Botonarriba_pressed():
-	velocidad.y -= 250
-	if velocidad.y > 500:
-		velocidad.y = 0
+	velocidad.y = -250
+	if velocidad.y < 0:
+		velocidad.y -= 50
 
 #cuando el boton derecha se pulsa:
 func _on_BotonDer_pressed():
-	velocidad.x += 300;
+	velocidad.x = 1000;
+	if velocidad.x >0:
+		velocidad.x -= 150
 	$SoltarBoton.start()
 
 #cuando el boton izquierda se pulsa:
 func _on_BotonIzq_pressed():
-	velocidad.x -= 300;
+	velocidad.x = -1000;
+	if velocidad.x <0:
+		velocidad.x += 150
 	$SoltarBoton.start()
 	
 func _on_SoltarBoton_timeout():
