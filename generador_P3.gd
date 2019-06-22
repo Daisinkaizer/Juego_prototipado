@@ -1,4 +1,5 @@
 extends Node2D
+
 var objetivo = preload("res://escenas/pirana.tscn")
 
 func _ready():

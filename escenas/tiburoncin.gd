@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var velocidad = -150
+var velocidad = -500
 
 func _process(delta):
 	move_local_x(velocidad*delta)
