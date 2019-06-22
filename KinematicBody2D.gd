@@ -44,6 +44,11 @@ func _physics_process(delta):
 					corazon()
 					$StopGolpe.start()
 					$SonidoGolpe.play()
+				if "megalodon" in get_slide_collision(i).collider.name:
+					dano2()
+					corazon()
+					$StopGolpe.start()
+					$SonidoGolpe.play()
 				if vida <= 0:
 						dead()
 				print (vida)
@@ -88,6 +93,13 @@ func _on_SoltarBoton_timeout():
 
 func dano():
 	vida -= 1
+	$jugador_sprite.play("muerte")
+	$jugador_colision.disabled = true
+	$CoolDown.start()
+	$SonidoGolpe.stop()
+	
+func dano2():
+	vida -= 2
 	$jugador_sprite.play("muerte")
 	$jugador_colision.disabled = true
 	$CoolDown.start()

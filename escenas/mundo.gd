@@ -1,7 +1,6 @@
 extends Node
 var Score = 0
 signal iniciojuego
-
 func _ready():
 	#$jugador.hide()
 	$generador_P.hide()
@@ -16,8 +15,6 @@ func _ready():
 	
 	$Interfaz.mostrar_mensaje("¡Listo!")
 	
-
-
 
 func juego_nuevo():
 	Score = 0
@@ -36,6 +33,23 @@ func _on_ScoreTimer_timeout():
 	Score += 1
 	$Interfaz.actualizar_puntos(Score)
 	print(Score)
+	if Score > 85:
+		yield($Timerspawnmegalodon, "timeout")
+		$Generador_M.spawnlodon()
+	if Score > 1:
+		yield($Timerspawnpirana1, "timeout")
+		$generador_P.spawnpirana()
+	if Score > 10:
+		yield($Timerspawnpirana2, "timeout")
+		$generador_P2.spawnpirana()
+	
+	if Score > 10:
+		yield($Timerspawntiburon1, "timeout")
+		$generador_T.spawntiburon()
+	if Score > 15:
+		yield($Timerspawntiburon2, "timeout")
+		$generador_T2.spawntiburon()
+
 	pass # Replace with function body.
 
 
@@ -46,3 +60,26 @@ func _on_InicioTimer_timeout():
 func game_over():
 	$Interfaz.mostrar_mensaje("¡Pezdiste!")
 	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
