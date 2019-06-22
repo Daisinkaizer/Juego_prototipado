@@ -33,20 +33,20 @@ func _on_ScoreTimer_timeout():
 	Score += 1
 	$Interfaz.actualizar_puntos(Score)
 	print(Score)
-	if Score > 85:
+	if Score > 1:
 		yield($Timerspawnmegalodon, "timeout")
 		$Generador_M.spawnlodon()
-	if Score > 1:
+	if Score > 40:
 		yield($Timerspawnpirana1, "timeout")
 		$generador_P.spawnpirana()
-	if Score > 10:
+	if Score > 40:
 		yield($Timerspawnpirana2, "timeout")
 		$generador_P2.spawnpirana()
 	
-	if Score > 10:
+	if Score > 20:
 		yield($Timerspawntiburon1, "timeout")
 		$generador_T.spawntiburon()
-	if Score > 15:
+	if Score > 20:
 		yield($Timerspawntiburon2, "timeout")
 		$generador_T2.spawntiburon()
 
