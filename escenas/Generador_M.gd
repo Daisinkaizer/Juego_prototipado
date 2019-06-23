@@ -10,6 +10,6 @@ func _on_Timer_timeout():
 	add_child(objetivoInstancia)
 
 func spawnlodon():
-	$Timerlodon.start(10)
+	$Timerlodon.start(rand_range(10,15))
 	var objetivoInstancia = Objetivo.instance()
 	add_child(objetivoInstancia)
