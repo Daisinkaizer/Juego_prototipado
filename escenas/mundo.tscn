@@ -16,7 +16,6 @@
 [ext_resource path="res://escenas/Spawn4.gd" type="Script" id=14]
 [ext_resource path="res://escenas/megalodon2.tscn" type="PackedScene" id=15]
 
-
 [sub_resource type="Animation" id=1]
 resource_name = "movimientospawn"
 length = 5.0

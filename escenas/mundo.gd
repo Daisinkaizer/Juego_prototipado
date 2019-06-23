@@ -32,8 +32,10 @@ func _on_ScoreTimer_timeout():
 	$Interfaz.actualizar_puntos(Score)
 	print(Score)
 	if Score > 85:
+		$jugador/CanvasLayer2/cuidado.show()
 		yield($Timerspawnmegalodon, "timeout")
 		$Generador_M.spawnlodon()
+		$jugador/CanvasLayer2/cuidado.hide()
 	if Score > 5:
 		yield($timerspawnpirana, "timeout")
 		$Spawn1/AnimationPlayer.play("movimientospawn")

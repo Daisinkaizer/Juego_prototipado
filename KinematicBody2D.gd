@@ -10,6 +10,7 @@ func _ready():
 	hide()
 	screen_size = get_viewport_rect().size
 	$jugador_colision.disabled = true
+	$CanvasLayer2/cuidado.hide()
 
 func _physics_process(delta):
 	#print(vida)
