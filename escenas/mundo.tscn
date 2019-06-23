@@ -1,84 +1,12 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://escenas/mundo.gd" type="Script" id=1]
 [ext_resource path="res://escenas/Parallax_layer.gd" type="Script" id=2]
 [ext_resource path="res://assets/fondo.png" type="Texture" id=3]
 [ext_resource path="res://escenas/jugador.tscn" type="PackedScene" id=4]
-[ext_resource path="res://escenas/generador_T.tscn" type="PackedScene" id=5]
-[ext_resource path="res://escenas/generador_T2.tscn" type="PackedScene" id=6]
-[ext_resource path="res://escenas/generador_P.tscn" type="PackedScene" id=7]
-[ext_resource path="res://escenas/generador_P2.tscn" type="PackedScene" id=8]
-[ext_resource path="res://escenas/Interfaz.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Musica/Markalo goes to the disco.ogg" type="AudioStream" id=10]
-[ext_resource path="res://escenas/Generador_M.tscn" type="PackedScene" id=11]
-
-[sub_resource type="Animation" id=1]
-resource_name = "spawn_T"
-length = 10.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1350, 720 ), Vector2( 1350, 648 ), Vector2( 1350, 576 ), Vector2( 1350, 504 ), Vector2( 1350, 432 ), Vector2( 1350, 360 ), Vector2( 1350, 288 ), Vector2( 1350, 216 ), Vector2( 1350, 144 ), Vector2( 1350, 72 ), Vector2( 1350, 0 ), Vector2( 1350, 72 ), Vector2( 1350, 144 ), Vector2( 1350, 216 ), Vector2( 1350, 288 ), Vector2( 1350, 360 ), Vector2( 1350, 432 ), Vector2( 1350, 504 ), Vector2( 1350, 576 ), Vector2( 1350, 648 ), Vector2( 1350, 720 ) ]
-}
-
-[sub_resource type="Animation" id=2]
-resource_name = "spawn_T2"
-length = 10.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1500, 0 ), Vector2( 1500, 72 ), Vector2( 1500, 144 ), Vector2( 1500, 216 ), Vector2( 1500, 288 ), Vector2( 1500, 360 ), Vector2( 1500, 432 ), Vector2( 1500, 504 ), Vector2( 1500, 576 ), Vector2( 1500, 648 ), Vector2( 1500, 720 ), Vector2( 1500, 648 ), Vector2( 1500, 576 ), Vector2( 1500, 504 ), Vector2( 1500, 432 ), Vector2( 1500, 360 ), Vector2( 1500, 288 ), Vector2( 1500, 216 ), Vector2( 1500, 144 ), Vector2( 1500, 72 ), Vector2( 1500, 0 ) ]
-}
-
-[sub_resource type="Animation" id=3]
-resource_name = "spawn_P"
-length = 8.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1, 2, 3, 4, 5, 6, 7, 8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 800 ), Vector2( 159.5, 800 ), Vector2( 319, 800 ), Vector2( 478.5, 800 ), Vector2( 638, 800 ), Vector2( 797.5, 800 ), Vector2( 957, 800 ), Vector2( 1116.5, 800 ), Vector2( 1276, 800 ) ]
-}
-
-[sub_resource type="Animation" id=4]
-resource_name = "spawn_P2"
-length = 7.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1, 2, 3, 4, 5, 6, 7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1276, 850 ), Vector2( 1093.71, 850 ), Vector2( 911.429, 850 ), Vector2( 729.143, 850 ), Vector2( 546.857, 850 ), Vector2( 364.571, 850 ), Vector2( 182.286, 850 ), Vector2( 0, 850 ) ]
-}
+[ext_resource path="res://escenas/Interfaz.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Musica/Markalo goes to the disco.ogg" type="AudioStream" id=6]
+[ext_resource path="res://escenas/Generador_M.tscn" type="PackedScene" id=7]
 
 [node name="mundo" type="Node"]
 script = ExtResource( 1 )
@@ -98,36 +26,6 @@ texture = ExtResource( 3 )
 [node name="jugador" parent="." instance=ExtResource( 4 )]
 position = Vector2( -19.6586, -28.2149 )
 
-[node name="generador_T" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1442.73, 571.639 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="generador_T"]
-autoplay = "spawn_T"
-anims/spawn_T = SubResource( 1 )
-
-[node name="generador_T2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1459.82, 127.276 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="generador_T2"]
-autoplay = "spawn_T2"
-anims/spawn_T2 = SubResource( 2 )
-
-[node name="generador_P" parent="." instance=ExtResource( 7 )]
-editor/display_folded = true
-position = Vector2( 0, 800 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="generador_P"]
-autoplay = "spawn_P"
-anims/spawn_P = SubResource( 3 )
-
-[node name="generador_P2" parent="." instance=ExtResource( 8 )]
-editor/display_folded = true
-position = Vector2( 1276, 850 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="generador_P2"]
-autoplay = "spawn_P2"
-anims/spawn_P2 = SubResource( 4 )
-
 [node name="Spawn" type="Position2D" parent="."]
 position = Vector2( 112.24, 88.4969 )
 
@@ -136,14 +34,14 @@ position = Vector2( 112.24, 88.4969 )
 [node name="InicioTimer" type="Timer" parent="."]
 wait_time = 2.0
 
-[node name="Interfaz" parent="." instance=ExtResource( 9 )]
+[node name="Interfaz" parent="." instance=ExtResource( 5 )]
 
 [node name="MusicaFondo" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 10 )
+stream = ExtResource( 6 )
 volume_db = -5.0
 autoplay = true
 
-[node name="Generador_M" parent="." instance=ExtResource( 11 )]
+[node name="Generador_M" parent="." instance=ExtResource( 7 )]
 position = Vector2( -155.841, 342.851 )
 
 [node name="Timerspawnmegalodon" type="Timer" parent="."]
