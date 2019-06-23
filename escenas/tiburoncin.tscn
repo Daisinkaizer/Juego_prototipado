@@ -27,7 +27,7 @@ __meta__ = {
 scale = Vector2( 0.34122, 0.34122 )
 frames = SubResource( 1 )
 animation = "tiburoncin"
-frame = 1
+frame = 2
 playing = true
 
 [node name="Collision_tiburoncin" type="CollisionShape2D" parent="."]
