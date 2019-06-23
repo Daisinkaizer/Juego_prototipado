@@ -31,7 +31,7 @@ func _on_ScoreTimer_timeout():
 	Score += 1
 	$Interfaz.actualizar_puntos(Score)
 	print(Score)
-	if Score > 1:
+	if Score > 85:
 		yield($Timerspawnmegalodon, "timeout")
 		$Generador_M.spawnlodon()
 	if Score > 5:
