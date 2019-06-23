@@ -38,20 +38,23 @@ func _on_ScoreTimer_timeout():
 		yield($timerspawnpirana, "timeout")
 		$Spawn1/AnimationPlayer.play("movimientospawn")
 		$Spawn1/Timer.start(rand_range(0.5,2))
+	if Score > 1:
+		yield($Timerspawnmegalodon2, "timeout")
+		$Spawn4/Timer.start(rand_range(5,10))
 	if Score >  25:
 		yield($timerspawnpirana, "timeout")
 		$Spawn2/AnimationPlayer.play("movimientotiburon")
 		$Spawn2/Timer.start(rand_range(1,2))
 	if Score > 25:
 		$Spawn1/Timer.start(rand_range(0.5,1))
-	if Score > 40:
-		$Spawn2/Timer.start(rand_range(0.3,0.5))
 		
 	if Score > 45:
 		$Spawn2/Timer.start(rand_range(1,2))
 	if Score > 50:
 		$Spawn3/AnimationPlayer.play("movimientotiburon2")
 		$Spawn3/Timer.start(rand_range(1,1.2))
+	if Score > 170:
+		$Spawn1/Timer.start(rand_range(0.3,0.9))
 		
 
 #	if Score > 0:

@@ -15,9 +15,13 @@ animations = [ {
 
 [node name="megalodon" type="KinematicBody2D"]
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="megalodon_sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
+frame = 1
 speed_scale = 0.7
 playing = true
 flip_h = true

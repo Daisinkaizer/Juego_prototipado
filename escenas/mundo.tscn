@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://escenas/mundo.gd" type="Script" id=1]
 [ext_resource path="res://escenas/Parallax_layer.gd" type="Script" id=2]
@@ -13,6 +13,9 @@
 [ext_resource path="res://escenas/Spawn2.gd" type="Script" id=11]
 [ext_resource path="res://escenas/tiburoncin.tscn" type="PackedScene" id=12]
 [ext_resource path="res://escenas/Spawn3.gd" type="Script" id=13]
+[ext_resource path="res://escenas/Spawn4.gd" type="Script" id=14]
+[ext_resource path="res://escenas/megalodon2.tscn" type="PackedScene" id=15]
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "movimientospawn"
@@ -65,6 +68,12 @@ tracks/0/keys = {
 "values": [ Vector2( 1289.05, 29.3259 ), Vector2( 1333.38, 68.9815 ), Vector2( 1296.36, 123.526 ), Vector2( 1327.53, 160.538 ), Vector2( 1308.05, 197.55 ), Vector2( 1337.27, 230.666 ), Vector2( 1310.61, 269.626 ), Vector2( 1312.67, 396.758 ), Vector2( 1349.57, 505.436 ), Vector2( 1316.77, 589.508 ), Vector2( 1331.12, 692.034 ) ]
 }
 
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 658.294, 10 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 8.61325, 384.584 )
+
 [node name="mundo" type="Node" groups=[
 "main",
 ]]
@@ -78,7 +87,7 @@ motion_mirroring = Vector2( 2320, 0 )
 script = ExtResource( 2 )
 
 [node name="fondo" type="Sprite" parent="Paralax_fondo/Parallax_layer"]
-position = Vector2( 1144.16, 366.812 )
+position = Vector2( 1141.51, 366.812 )
 scale = Vector2( 1.20882, 1.28452 )
 texture = ExtResource( 3 )
 
@@ -103,6 +112,10 @@ autoplay = true
 position = Vector2( -155.841, 342.851 )
 
 [node name="Timerspawnmegalodon" type="Timer" parent="."]
+wait_time = 15.0
+autostart = true
+
+[node name="Timerspawnmegalodon2" type="Timer" parent="."]
 wait_time = 15.0
 autostart = true
 
@@ -163,9 +176,59 @@ wait_time = 3.0
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Spawn3"]
 anims/movimientotiburon2 = SubResource( 3 )
 
+[node name="Spawn4" type="Position2D" parent="."]
+position = Vector2( 1348.48, 387.901 )
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_group_": true
+}
+npc = ExtResource( 15 )
+
+[node name="Timer" type="Timer" parent="Spawn4"]
+wait_time = 3.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 654.913, -3.02623 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 2.2923, 0.702408 )
+shape = SubResource( 4 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( 643.225, 700.203 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 2.2923, 0.702408 )
+shape = SubResource( 4 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2( 6.84195, 338.873 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+shape = SubResource( 5 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2( 1281.47, 420.667 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+shape = SubResource( 5 )
+
 [connection signal="muerto" from="jugador" to="." method="game_over"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
 [connection signal="timeout" from="InicioTimer" to="." method="_on_InicioTimer_timeout"]
 [connection signal="timeout" from="Spawn1/Timer" to="Spawn1" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Spawn2/Timer" to="Spawn2" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Spawn3/Timer" to="Spawn3" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Spawn4/Timer" to="Spawn4" method="_on_Timer_timeout"]
