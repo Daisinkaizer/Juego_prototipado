@@ -74,6 +74,5 @@ autoplay = true
 
 [node name="generador_T" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1356.47, 299.752 )
-
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/TextureButton2" to="." method="_on_TextureButton2_pressed"]
