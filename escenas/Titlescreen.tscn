@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://escenas/Titlescreen.gd" type="Script" id=1]
 [ext_resource path="res://assets/titulo.png" type="Texture" id=2]
@@ -6,10 +6,12 @@
 [ext_resource path="res://assets/iniciar selecionado.png" type="Texture" id=4]
 [ext_resource path="res://assets/salir.png" type="Texture" id=5]
 [ext_resource path="res://assets/seleccionado.png" type="Texture" id=6]
-[ext_resource path="res://escenas/ParallaxLayer.gd" type="Script" id=7]
-[ext_resource path="res://assets/fondo.png" type="Texture" id=8]
-[ext_resource path="res://Musica/Humble Match.ogg" type="AudioStream" id=9]
-[ext_resource path="res://escenas/generador_T.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/creditos1.png" type="Texture" id=7]
+[ext_resource path="res://assets/creditos2.png" type="Texture" id=8]
+[ext_resource path="res://escenas/ParallaxLayer.gd" type="Script" id=9]
+[ext_resource path="res://assets/fondo.png" type="Texture" id=10]
+[ext_resource path="res://Musica/Humble Match.ogg" type="AudioStream" id=11]
+[ext_resource path="res://escenas/generador_T.tscn" type="PackedScene" id=12]
 
 [node name="Titlescreen" type="Node"]
 script = ExtResource( 1 )
@@ -26,9 +28,9 @@ custom_constants/margin_bottom = 60
 margin_left = 150.0
 margin_top = 120.0
 margin_right = 1129.0
-margin_bottom = 660.0
+margin_bottom = 695.0
 size_flags_horizontal = 4
-custom_constants/separation = 16
+custom_constants/separation = -17
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
 margin_right = 979.0
@@ -36,43 +38,51 @@ margin_bottom = 271.0
 texture = ExtResource( 2 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_left = 348.0
-margin_top = 287.0
-margin_right = 630.0
-margin_bottom = 530.0
+margin_left = 332.0
+margin_top = 254.0
+margin_right = 646.0
+margin_bottom = 575.0
 size_flags_horizontal = 4
 
 [node name="TextureButton" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
-margin_right = 282.0
+margin_right = 314.0
 margin_bottom = 91.0
 texture_normal = ExtResource( 3 )
 texture_focused = ExtResource( 4 )
 
 [node name="TextureButton2" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 margin_top = 95.0
-margin_right = 282.0
+margin_right = 314.0
 margin_bottom = 243.0
 texture_normal = ExtResource( 5 )
 texture_focused = ExtResource( 6 )
+
+[node name="TextureButton3" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 247.0
+margin_right = 314.0
+margin_bottom = 321.0
+texture_normal = ExtResource( 7 )
+texture_focused = ExtResource( 8 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2( 0, -1.948 )
 motion_mirroring = Vector2( 2396, 0 )
-script = ExtResource( 7 )
+script = ExtResource( 9 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 scale = Vector2( 1.2485, 1.2485 )
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 centered = false
 
 [node name="MusicaScreen" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 9 )
+stream = ExtResource( 11 )
 volume_db = -11.696
 autoplay = true
 
-[node name="generador_T" parent="." instance=ExtResource( 10 )]
+[node name="generador_T" parent="." instance=ExtResource( 12 )]
 position = Vector2( 1356.47, 299.752 )
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/TextureButton2" to="." method="_on_TextureButton2_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/TextureButton3" to="." method="_on_TextureButton3_pressed"]
