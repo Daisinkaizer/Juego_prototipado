@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://escenas/mundo.gd" type="Script" id=1]
 [ext_resource path="res://escenas/Parallax_layer.gd" type="Script" id=2]
@@ -13,8 +13,6 @@
 [ext_resource path="res://escenas/Spawn2.gd" type="Script" id=11]
 [ext_resource path="res://escenas/tiburoncin.tscn" type="PackedScene" id=12]
 [ext_resource path="res://escenas/Spawn3.gd" type="Script" id=13]
-[ext_resource path="res://escenas/Spawn4.gd" type="Script" id=14]
-[ext_resource path="res://escenas/megalodon2.tscn" type="PackedScene" id=15]
 
 [sub_resource type="Animation" id=1]
 resource_name = "movimientospawn"
@@ -175,17 +173,6 @@ wait_time = 3.0
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Spawn3"]
 anims/movimientotiburon2 = SubResource( 3 )
 
-[node name="Spawn4" type="Position2D" parent="."]
-position = Vector2( 1348.48, 387.901 )
-script = ExtResource( 14 )
-__meta__ = {
-"_edit_group_": true
-}
-npc = ExtResource( 15 )
-
-[node name="Timer" type="Timer" parent="Spawn4"]
-wait_time = 3.0
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 654.913, -3.02623 )
 __meta__ = {
@@ -230,4 +217,3 @@ shape = SubResource( 5 )
 [connection signal="timeout" from="Spawn1/Timer" to="Spawn1" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Spawn2/Timer" to="Spawn2" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Spawn3/Timer" to="Spawn3" method="_on_Timer_timeout"]
-[connection signal="timeout" from="Spawn4/Timer" to="Spawn4" method="_on_Timer_timeout"]

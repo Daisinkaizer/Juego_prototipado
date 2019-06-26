@@ -49,7 +49,6 @@ volume_db = -7.068
 scale = Vector2( 0.364023, 0.364023 )
 frames = SubResource( 1 )
 animation = "buzo"
-frame = 7
 playing = true
 
 [node name="jugador_colision" type="CollisionShape2D" parent="."]
@@ -126,10 +125,10 @@ scale = Vector2( 0.0237, 0.0237 )
 texture = ExtResource( 12 )
 
 [node name="cuidado" type="AnimatedSprite" parent="CanvasLayer2"]
-position = Vector2( 655.94, 331.714 )
+position = Vector2( -147.02, 474.816 )
 scale = Vector2( 1.79501, 1.36486 )
 frames = SubResource( 3 )
-frame = 2
+frame = 1
 playing = true
 
 [connection signal="timeout" from="Respawn" to="." method="_on_Timer_timeout"]
