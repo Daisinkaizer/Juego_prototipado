@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://Musica/golpe.ogg" type="AudioStream" id=2]
@@ -9,10 +9,13 @@
 [ext_resource path="res://assets/buzo5.png" type="Texture" id=7]
 [ext_resource path="res://assets/buzo4.png" type="Texture" id=8]
 [ext_resource path="res://assets/boton_arr.png" type="Texture" id=9]
-[ext_resource path="res://assets/boton_izq.png" type="Texture" id=10]
-[ext_resource path="res://assets/boton_der.png" type="Texture" id=11]
-[ext_resource path="res://assets/corazon.png" type="Texture" id=12]
-[ext_resource path="res://assets/!.png" type="Texture" id=13]
+[ext_resource path="res://assets/arriba2.png" type="Texture" id=10]
+[ext_resource path="res://assets/boton_izq.png" type="Texture" id=11]
+[ext_resource path="res://assets/izquierda2.png" type="Texture" id=12]
+[ext_resource path="res://assets/boton_der.png" type="Texture" id=13]
+[ext_resource path="res://assets/derecha2.png" type="Texture" id=14]
+[ext_resource path="res://assets/corazon.png" type="Texture" id=15]
+[ext_resource path="res://assets/!.png" type="Texture" id=16]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -32,7 +35,7 @@ extents = Vector2( 61.9228, 10 )
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 13 ), null, ExtResource( 13 ) ],
+"frames": [ ExtResource( 16 ), null, ExtResource( 16 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -49,7 +52,7 @@ volume_db = -7.068
 scale = Vector2( 0.364023, 0.364023 )
 frames = SubResource( 1 )
 animation = "buzo"
-frame = 4
+frame = 7
 playing = true
 
 [node name="jugador_colision" type="CollisionShape2D" parent="."]
@@ -76,6 +79,7 @@ __meta__ = {
 margin_right = 125.0
 margin_bottom = 120.0
 texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 10 )
 expand = true
 
 [node name="Izquierda" type="MarginContainer" parent="CanvasLayer"]
@@ -88,7 +92,8 @@ rect_scale = Vector2( 0.29773, 0.254122 )
 [node name="BotonIzq" type="TextureButton" parent="CanvasLayer/Izquierda"]
 margin_right = 456.0
 margin_bottom = 455.0
-texture_normal = ExtResource( 10 )
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 12 )
 
 [node name="Derecha" type="MarginContainer" parent="CanvasLayer"]
 margin_left = 191.139
@@ -100,7 +105,8 @@ rect_scale = Vector2( 0.298174, 0.248306 )
 [node name="BotonDer" type="TextureButton" parent="CanvasLayer/Derecha"]
 margin_right = 456.0
 margin_bottom = 455.0
-texture_normal = ExtResource( 11 )
+texture_normal = ExtResource( 13 )
+texture_pressed = ExtResource( 14 )
 
 [node name="SoltarBoton" type="Timer" parent="."]
 wait_time = 0.1
@@ -113,23 +119,22 @@ wait_time = 2.0
 [node name="Corazon" type="Sprite" parent="CanvasLayer2"]
 position = Vector2( 39.24, 39 )
 scale = Vector2( 0.0237, 0.0237 )
-texture = ExtResource( 12 )
+texture = ExtResource( 15 )
 
 [node name="corazon2" type="Sprite" parent="CanvasLayer2"]
 position = Vector2( 96.391, 39 )
 scale = Vector2( 0.0237, 0.0237 )
-texture = ExtResource( 12 )
+texture = ExtResource( 15 )
 
 [node name="corazon3" type="Sprite" parent="CanvasLayer2"]
 position = Vector2( 153.042, 39 )
 scale = Vector2( 0.0237, 0.0237 )
-texture = ExtResource( 12 )
+texture = ExtResource( 15 )
 
 [node name="cuidado" type="AnimatedSprite" parent="CanvasLayer2"]
 position = Vector2( -147.02, 474.816 )
 scale = Vector2( 1.79501, 1.36486 )
 frames = SubResource( 3 )
-frame = 2
 playing = true
 [connection signal="timeout" from="Respawn" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="StopGolpe" to="." method="sonido"]
