@@ -210,7 +210,6 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
 shape = SubResource( 5 )
-
 [connection signal="muerto" from="jugador" to="." method="game_over"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
 [connection signal="timeout" from="InicioTimer" to="." method="_on_InicioTimer_timeout"]

@@ -48,21 +48,21 @@ size_flags_horizontal = 4
 margin_right = 314.0
 margin_bottom = 91.0
 texture_normal = ExtResource( 3 )
-texture_focused = ExtResource( 4 )
+texture_pressed = ExtResource( 4 )
 
 [node name="TextureButton2" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 margin_top = 95.0
 margin_right = 314.0
 margin_bottom = 243.0
 texture_normal = ExtResource( 5 )
-texture_focused = ExtResource( 6 )
+texture_pressed = ExtResource( 6 )
 
 [node name="TextureButton3" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 margin_top = 247.0
 margin_right = 314.0
 margin_bottom = 321.0
 texture_normal = ExtResource( 7 )
-texture_focused = ExtResource( 8 )
+texture_pressed = ExtResource( 8 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -83,7 +83,6 @@ autoplay = true
 
 [node name="generador_T" parent="." instance=ExtResource( 12 )]
 position = Vector2( 1356.47, 299.752 )
-
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/TextureButton2" to="." method="_on_TextureButton2_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/TextureButton3" to="." method="_on_TextureButton3_pressed"]
